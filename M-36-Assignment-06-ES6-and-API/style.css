@@ -1,0 +1,21 @@
+.text-gradient {
+  background: linear-gradient(to right, #7b65b9, #1a1e8d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 19, 45, 0.05),
+    rgba(18, 19, 45, 0) 100%
+  );
+}
+
+.header-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 14px;
+}

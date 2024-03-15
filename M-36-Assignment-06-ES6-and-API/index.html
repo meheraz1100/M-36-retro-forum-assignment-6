@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Connect</title>
+    <!-- Added Taildwind and DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Adding Font Awesome CSS Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Adding Font Awesome CSS Library End -->
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- End External CSS Link -->
+  </head>
+  <body class="m-auto font-['Manrope'] mt-10">
+    <!-- Header start -->
+    <header class="m-auto p-0 lg:p-0 lg:w-232 mb-6 w-full lg:w-[1173px]">
+      <div
+        class="navbar bg-base-100 flex flex-wrap items-center justify-between"
+      >
+        <div class="flex items-center">
+          <div
+            id="mobile-menu-toggle"
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost lg:hidden pr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <a
+            class="btn btn-ghost hover:bg-transparent lg:text-3xl text-2xl font-bold !pl-0"
+            >Retro Connect</a
+          >
+          <button
+            class="btn btn-neutral lg:hidden block w-[117px] hover:bg-[#797DFC] h-3 flex border-none flex-row items-center justify-center p-18 bg-[#797DFC] text-white rounded-full"
+          >
+            Sign In
+          </button>
+        </div>
+
+        <div class="navbar-end hidden lg:flex justify-end">
+          <ul
+            class="menu menu-horizontal px-4 mx-4 text-[#030712B3] flex justify-evenly w-full"
+          >
+            <li class="tooltip" data-tip="Home">
+              <a
+                class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+              >
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs>
+                    <clipPath id="clip5_543">
+                      <rect
+                        id="Frame"
+                        width="24.000000"
+                        height="24.000000"
+                        fill="white"
+                        fill-opacity="0"
+                      />
+                    </clipPath>
+                  </defs>
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="#FFFFFF"
+                    fill-opacity="0"
+                  />
+                  <g clip-path="url(#clip5_543)">
+                    <path
+                      id="Vector"
+                      d="M2.25 12L11.204 3.04517C11.644 2.60596 12.356 2.60596 12.795 3.04517L21.75 12M4.5 9.75L4.5 19.875C4.5 20.4961 5.004 21 5.625 21L9.75 21L9.75 16.125C9.75 15.5042 10.254 15 10.875 15L13.125 15C13.746 15 14.25 15.5042 14.25 16.125L14.25 21L18.375 21C18.996 21 19.5 20.4961 19.5 19.875L19.5 9.75M8.25 21L16.5 21"
+                      stroke="#12132D"
+                      stroke-opacity="0.600000"
+                      stroke-width="1.500000"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li class="tooltip" data-tip="Write Your Post">
+              <a
+                class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+              >
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs>
+                    <clipPath id="clip5_545">
+                      <rect
+                        id="Frame"
+                        width="24.000000"
+                        height="24.000000"
+                        fill="white"
+                        fill-opacity="0"
+                      />
+                    </clipPath>
+                  </defs>
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="#FFFFFF"
+                    fill-opacity="0"
+                  />
+                  <g clip-path="url(#clip5_545)">
+                    <path
+                      id="Vector"
+                      d="M19.5 7.125L16.862 4.48706L18.549 2.79907C18.9007 2.44727 19.3776 2.24976 19.875 2.24976C20.3724 2.24976 20.8493 2.44727 21.201 2.79907C21.5527 3.15063 21.7502 3.62769 21.7502 4.125C21.7502 4.62231 21.5527 5.09937 21.201 5.45093L6.83197 19.8201C6.30334 20.3484 5.65137 20.7368 4.935 20.95L2.25 21.75L3.04999 19.0649C3.26331 18.3486 3.65161 17.6968 4.17999 17.168L16.863 4.48706L16.862 4.48706"
+                      stroke="#12132D"
+                      stroke-opacity="0.600000"
+                      stroke-width="1.500000"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li class="tooltip" data-tip="Add Friends">
+              <a
+                class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+              >
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs>
+                    <clipPath id="clip5_547">
+                      <rect
+                        id="Frame"
+                        width="24.000000"
+                        height="24.000000"
+                        fill="white"
+                        fill-opacity="0"
+                      />
+                    </clipPath>
+                  </defs>
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="#FFFFFF"
+                    fill-opacity="0"
+                  />
+                  <g clip-path="url(#clip5_547)">
+                    <path
+                      id="Vector"
+                      d="M18 7.5L18 10.5L18 13.5M18 10.5L21 10.5M18 10.5L15 10.5M11.7615 8.76147C11.1285 9.39453 10.2701 9.75 9.375 9.75C8.47992 9.75 7.62146 9.39453 6.98853 8.76147C6.35559 8.12866 6 7.27002 6 6.375C6 5.47998 6.35559 4.62134 6.98853 3.98853C7.62146 3.35547 8.47992 3 9.375 3C10.2701 3 11.1285 3.35547 11.7615 3.98853C12.3944 4.62134 12.75 5.47998 12.75 6.375C12.75 7.27002 12.3944 8.12866 11.7615 8.76147ZM3 19.125C3 17.4343 3.67163 15.8127 4.86719 14.6172C6.06274 13.4216 7.68427 12.75 9.375 12.75C11.0657 12.75 12.6873 13.4216 13.8828 14.6172C15.0784 15.8127 15.75 17.4343 15.75 19.125L15.75 19.2339C13.8255 20.3931 11.6206 21.0039 9.37402 21C7.04297 21 4.862 20.355 3 19.2339L3 19.2351L3 19.125Z"
+                      stroke="#12132D"
+                      stroke-opacity="0.600000"
+                      stroke-width="1.500000"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li class="tooltip" data-tip="Saved Post">
+              <a
+                class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+              >
+                <svg
+                  width="24.000000"
+                  height="24.000000"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <desc>Created with Pixso.</desc>
+                  <defs>
+                    <clipPath id="clip5_549">
+                      <rect
+                        id="Frame"
+                        width="24.000000"
+                        height="24.000000"
+                        fill="white"
+                        fill-opacity="0"
+                      />
+                    </clipPath>
+                  </defs>
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="#FFFFFF"
+                    fill-opacity="0"
+                  />
+                  <g clip-path="url(#clip5_549)">
+                    <path
+                      id="Vector"
+                      d="M3 3L3 4.5L3 15L3 21M3 15L5.77002 14.3069C7.85443 13.7861 10.0564 14.0281 11.978 14.989L12.086 15.043C13.9692 15.9841 16.1227 16.2354 18.172 15.7529L21.286 15.021C20.9046 11.5317 20.903 8.01147 21.281 4.52197L18.171 5.25391C16.1219 5.73584 13.9688 5.48438 12.086 4.54297L11.978 4.48901C10.0564 3.52808 7.85443 3.28613 5.77002 3.80688L3 4.5"
+                      stroke="#12132D"
+                      stroke-opacity="0.600000"
+                      stroke-width="1.500000"
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <button
+            class="btn btn-neutral w-[117px] hover:bg-[#797DFC] h-3 flex border-none flex-row items-center justify-center p-18 bg-[#797DFC] text-white rounded-full"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+
+      <ul
+        id="mobile-menu"
+        tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-full lg:w-52 hidden"
+      >
+        <li class="mb-4">
+          <a
+            class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+          >
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <desc>Created with Pixso.</desc>
+              <defs>
+                <clipPath id="clip5_543">
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="white"
+                    fill-opacity="0"
+                  />
+                </clipPath>
+              </defs>
+              <rect
+                id="Frame"
+                width="24.000000"
+                height="24.000000"
+                fill="#FFFFFF"
+                fill-opacity="0"
+              />
+              <g clip-path="url(#clip5_543)">
+                <path
+                  id="Vector"
+                  d="M2.25 12L11.204 3.04517C11.644 2.60596 12.356 2.60596 12.795 3.04517L21.75 12M4.5 9.75L4.5 19.875C4.5 20.4961 5.004 21 5.625 21L9.75 21L9.75 16.125C9.75 15.5042 10.254 15 10.875 15L13.125 15C13.746 15 14.25 15.5042 14.25 16.125L14.25 21L18.375 21C18.996 21 19.5 20.4961 19.5 19.875L19.5 9.75M8.25 21L16.5 21"
+                  stroke="#12132D"
+                  stroke-opacity="0.600000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
+        <li class="mb-4">
+          <a
+            class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+          >
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <desc>Created with Pixso.</desc>
+              <defs>
+                <clipPath id="clip5_545">
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="white"
+                    fill-opacity="0"
+                  />
+                </clipPath>
+              </defs>
+              <rect
+                id="Frame"
+                width="24.000000"
+                height="24.000000"
+                fill="#FFFFFF"
+                fill-opacity="0"
+              />
+              <g clip-path="url(#clip5_545)">
+                <path
+                  id="Vector"
+                  d="M19.5 7.125L16.862 4.48706L18.549 2.79907C18.9007 2.44727 19.3776 2.24976 19.875 2.24976C20.3724 2.24976 20.8493 2.44727 21.201 2.79907C21.5527 3.15063 21.7502 3.62769 21.7502 4.125C21.7502 4.62231 21.5527 5.09937 21.201 5.45093L6.83197 19.8201C6.30334 20.3484 5.65137 20.7368 4.935 20.95L2.25 21.75L3.04999 19.0649C3.26331 18.3486 3.65161 17.6968 4.17999 17.168L16.863 4.48706L16.862 4.48706"
+                  stroke="#12132D"
+                  stroke-opacity="0.600000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
+        <li class="mb-4">
+          <a
+            class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+          >
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <desc>Created with Pixso.</desc>
+              <defs>
+                <clipPath id="clip5_547">
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="white"
+                    fill-opacity="0"
+                  />
+                </clipPath>
+              </defs>
+              <rect
+                id="Frame"
+                width="24.000000"
+                height="24.000000"
+                fill="#FFFFFF"
+                fill-opacity="0"
+              />
+              <g clip-path="url(#clip5_547)">
+                <path
+                  id="Vector"
+                  d="M18 7.5L18 10.5L18 13.5M18 10.5L21 10.5M18 10.5L15 10.5M11.7615 8.76147C11.1285 9.39453 10.2701 9.75 9.375 9.75C8.47992 9.75 7.62146 9.39453 6.98853 8.76147C6.35559 8.12866 6 7.27002 6 6.375C6 5.47998 6.35559 4.62134 6.98853 3.98853C7.62146 3.35547 8.47992 3 9.375 3C10.2701 3 11.1285 3.35547 11.7615 3.98853C12.3944 4.62134 12.75 5.47998 12.75 6.375C12.75 7.27002 12.3944 8.12866 11.7615 8.76147ZM3 19.125C3 17.4343 3.67163 15.8127 4.86719 14.6172C6.06274 13.4216 7.68427 12.75 9.375 12.75C11.0657 12.75 12.6873 13.4216 13.8828 14.6172C15.0784 15.8127 15.75 17.4343 15.75 19.125L15.75 19.2339C13.8255 20.3931 11.6206 21.0039 9.37402 21C7.04297 21 4.862 20.355 3 19.2339L3 19.2351L3 19.125Z"
+                  stroke="#12132D"
+                  stroke-opacity="0.600000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
+        <li class="mb-4">
+          <a
+            class="header-icon-container box-sizing border-box border border-solid border-opacity-10 border-slate rounded-full shadow-md bg-[#12132D08] w-14 h-14"
+          >
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <desc>Created with Pixso.</desc>
+              <defs>
+                <clipPath id="clip5_549">
+                  <rect
+                    id="Frame"
+                    width="24.000000"
+                    height="24.000000"
+                    fill="white"
+                    fill-opacity="0"
+                  />
+                </clipPath>
+              </defs>
+              <rect
+                id="Frame"
+                width="24.000000"
+                height="24.000000"
+                fill="#FFFFFF"
+                fill-opacity="0"
+              />
+              <g clip-path="url(#clip5_549)">
+                <path
+                  id="Vector"
+                  d="M3 3L3 4.5L3 15L3 21M3 15L5.77002 14.3069C7.85443 13.7861 10.0564 14.0281 11.978 14.989L12.086 15.043C13.9692 15.9841 16.1227 16.2354 18.172 15.7529L21.286 15.021C20.9046 11.5317 20.903 8.01147 21.281 4.52197L18.171 5.25391C16.1219 5.73584 13.9688 5.48438 12.086 4.54297L11.978 4.48901C10.0564 3.52808 7.85443 3.28613 5.77002 3.80688L3 4.5"
+                  stroke="#12132D"
+                  stroke-opacity="0.600000"
+                  stroke-width="1.500000"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+      <!-- Hero Section Start -->
+      <section class="w-fit m-4 lg:mx-auto relative lg:w-[1173px]">
+        <div
+          class="hero min-h-[300px] lg:min-h-[550px] rounded-2xl bg-base-200 bg-[url('/images/Group-9.png')]"
+        >
+          <div
+            class="hero-content lg:gap-72 lg:flex-row flex-col text-left flex flex-start"
+          >
+            <div class="max-w-md px-4 lg:px-0">
+              <h1 class="text-3xl lg:text-5xl font-bold text-white">
+                Welcome to the <br />
+
+                <span class="text-gradient">ReTro</span>
+                Forum
+              </h1>
+              <p class="py-4 lg:py-6 text-white">
+                Share your favourite opinion and wind and wp
+                <br class="lg:block hidden" />
+                forum coffee mug!
+              </p>
+              <div class="relative">
+                <button
+                  id="searchButton"
+                  class="absolute inset-y-0 right-[3px] my-[2px] px-8 py-2 bg-blue-500 text-white rounded-full"
+                >
+                  Search
+                </button>
+                <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search..."
+                  class="pl-4 pr-12 py-4 w-full border border-gray-300 rounded-full focus:outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div class="flex-end lg:w-fit w-[18rem]">
+              <footer
+                class="flex flex-row gap-8 p-10 bg-base-200 text-base-content rounded-2xl"
+              >
+                <nav>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    Registered Users
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    Forum
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    Topics
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    Replies
+                  </p>
+                </nav>
+                <nav>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    05
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    03
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    06
+                  </p>
+                  <p class="text-xl font-medium leading-7 text-[#12132DCC]">
+                    01
+                  </p>
+                </nav>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Hero Section End -->
+      <!-- All Post Section Start -->
+      <section class="my-8 lg:mt-12 w-full mx-auto lg:w-[1173px]">
+        <h1 class="text-xl lg:text-3xl text-center font-bold lg:mb-8">
+          Lets's Discuss
+        </h1>
+        <p class="text-center lg:w-[550px] w-[300px] mx-auto text-[#12132D99]">
+          Yes, you can run unit tests and view the results directly within the
+          app. The integrated testing features allow for a streamlined .
+        </p>
+        <div
+          class="flex flex-col m-4 lg:m-8 lg:flex-row lg:gap-4 gap-4 lg:justify-between mt-6"
+        >
+          <div id="loadingWrapper" class="w-full">
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+          </div>
+          <div
+            class="flex flex-col api-container"
+            id="contentWrapper"
+            style="display: none"
+          ></div>
+          <!-- Right side -->
+          <div>
+            <div
+              class="card lg:w-96 w-[22rem] bg-[#12132D0D] rounded-2xl text-black"
+            >
+              <div class="card-body">
+                <div class="flex justify-between">
+                  <h2 class="card-title">Title</h2>
+                  <div class="flex flex-row">
+                    <svg
+                      width="24.000000"
+                      height="24.000000"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <desc>Created with Pixso.</desc>
+                      <defs>
+                        <clipPath id="clip30_2429">
+                          <rect
+                            id="Frame"
+                            width="24.000000"
+                            height="24.000000"
+                            fill="white"
+                            fill-opacity="0"
+                          />
+                        </clipPath>
+                      </defs>
+                      <rect
+                        id="Frame"
+                        width="24.000000"
+                        height="24.000000"
+                        fill="#FFFFFF"
+                        fill-opacity="0"
+                      />
+                      <g clip-path="url(#clip30_2429)">
+                        <path
+                          id="Vector"
+                          d="M7 12L12 17L22 7"
+                          stroke="#3DCE09"
+                          stroke-opacity="1.000000"
+                          stroke-width="1.500000"
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          id="Vector"
+                          d="M2 12L7 17M12 12L17 7"
+                          stroke="#3DCE09"
+                          stroke-opacity="1.000000"
+                          stroke-width="1.500000"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </svg>
+                    <h3 class="text-[#12132D99]" id="read-count">
+                      Mark as read (0)
+                    </h3>
+                  </div>
+                </div>
+                <p id="no-post">No posts have been read yet</p>
+                <div id="postDetails"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- All Post Section End -->
+      <!-- Join Forum Section Start-->
+      <section class="w-full m-4 mx-auto relative lg:w-[1173px]">
+        <div
+          class="hero min-h-[300px] rounded-2xl bg-base-200 bg-[#12132D] m-4 lg:w-full w-[22rem]"
+        >
+          <div
+            class="hero-content lg:gap-16 lg:flex-row flex-col text-left flex flex-start"
+          >
+            <div class="max-w-md lg:w-[567px] w-fit px-4 lg:px-0">
+              <h1 class="text-3xl lg:text-5xl font-bold text-white">
+                Join Our Forum
+              </h1>
+              <p class="py-4 lg:py-6 text-white">
+                Join Our Forum: Explore vibrant discussions, gain insights, and
+                connect with a community passionate about retro programming.
+              </p>
+              <button
+                class="my-[2px] px-8 py-2 bg-[#797DFC] text-white rounded-full"
+              >
+                Register Now
+              </button>
+            </div>
+            <div class="flex-end border-dashed border">
+              <img src="images/joinforum.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Join Forum Section End -->
+      <!-- Latest Posts -->
+      <section class="lg:my-8 m-4 lg:mt-12 w-full lg:mx-auto lg:w-[1173px]">
+        <h1 class="text-xl lg:text-3xl text-center font-bold lg:mb-8">
+          Latest Posts
+        </h1>
+        <p class="text-center lg:w-[550px] w-[300px] mx-auto text-[#12132D99]">
+          Yes, you can run unit tests and view the results directly within the
+          app. The integrated testing features allow for a streamlined .
+        </p>
+
+        <div
+          class="flex flex-col lg:flex-row lg:justify-between mt-6 gap-8"
+          id="latestPostsContainer"
+        >
+          <div id="latestLoadingWrapper" class="w-full">
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+            <div class="skeleton h-4 w-full mb-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toast Message -->
+      <div class="toast toast-end hidden" id="toast-end">
+        <div class="alert alert-error text-white font-bold text-3xl" id="alert">
+          <span id="toast-message"></span>
+        </div>
+      </div>
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <footer class="bg-gradient mt-12">
+      <div class="lg:w-[1173px] w-full mx-auto py-24 text-center">
+        <h2 class="text-2xl font-bold mb-2">ReTro Connect</h2>
+        <p
+          class="text-gray-600 mb-4 lg:w-[550px] w-[390px] text-center mx-auto"
+        >
+          A dynamic community hub for passionate discussions, diverse insights,
+          and the latest posts. Join us for engaging conversations and stay
+          connected with like-minded individuals.
+        </p>
+
+        <div class="flex justify-center space-x-4 mb-4">
+          <!-- Twitter Icon -->
+          <a
+            href="#"
+            class="text-blue-500 hover:text-blue-700 transition-all duration-300"
+          >
+            <i class="fa fa-twitter text-xl text-black"></i>
+          </a>
+          <!-- Facebook Icon -->
+          <a
+            href="#"
+            class="text-blue-700 hover:text-blue-900 transition-all duration-300"
+          >
+            <i class="fa fa-facebook text-xl text-black"></i>
+          </a>
+          <!-- Instagram Icon -->
+          <a
+            href="#"
+            class="text-pink-500 hover:text-pink-700 transition-all duration-300"
+          >
+            <i class="fa fa-instagram text-xl text-black"></i>
+          </a>
+          <!-- GitHub Icon -->
+          <a
+            href="#"
+            class="text-gray-600 hover:text-gray-800 transition-all duration-300"
+          >
+            <i class="fa fa-github text-xl text-black"></i>
+          </a>
+        </div>
+
+        <div class="border-t border-gray-300 py-4">
+          <p class="text-sm text-gray-500">© 2024 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("mobile-menu-toggle")
+        .addEventListener("click", function () {
+          var mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      function validateInput(input) {
+        // Allow only letters and spaces
+        input.value = input.value.replace(/[^A-Za-z\s]/g, "");
+      }
+    </script>
+  </body>
+</html>

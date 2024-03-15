@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "M-36-Assignment-06-ES6-and-API",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
